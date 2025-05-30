@@ -32,7 +32,7 @@
 puerta-de-la-verdad/
 ├── index.html
 ├── css/
-│   └── estilos-bootstrap-cartas.css
+│   └── estilos.css
 ├── pages/
 │   ├── alquimistas.html
 │   ├── homunculos.html
