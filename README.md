@@ -20,7 +20,7 @@
 ## 🚀 Tecnologías utilizadas
 
 - HTML5
-- CSS3 (con archivo personalizado `estilos-bootstrap-cartas.css`)
+- CSS3 (con archivo personalizado `estilos.css`)
 - Bootstrap 5 (CDN)
 - Flexbox y CSS Grid
 
