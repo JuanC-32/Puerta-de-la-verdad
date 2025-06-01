@@ -134,5 +134,43 @@ footer {
   margin-top: 2rem;
 }
 
+/* 📱 Ajustes para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .personajes-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .personaje img {
+    max-width: 120px;
+  }
+
+  .universo {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .universo img {
+    max-width: 180px;
+    margin-bottom: 1rem;
+  }
+}
+
+/* 🖥️ Ajustes para pantallas grandes (desktop) */
+@media (min-width: 1200px) {
+  .personajes-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .universo {
+    padding: 3rem;
+    font-size: 1.05rem;
+    max-width: 1100px;
+  }
+}
+
+
 
 
