@@ -1,0 +1,19 @@
+{
+  "name": "proyecto-pagina-web-coderhouse",
+  "version": "1.0.0",
+  "description": "**Puerta de la Verdad** es una página web interactiva dedicada al universo del anime *Fullmetal Alchemist: Brotherhood*. Este proyecto es un homenaje digital que explora a fondo sus personajes, lugares, conceptos de alquimia y razas, todo con un diseño responsive moderno.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuanC-32/Puerta-de-la-verdad.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JuanC-32/Puerta-de-la-verdad/issues"
+  },
+  "homepage": "https://github.com/JuanC-32/Puerta-de-la-verdad#readme"
+}

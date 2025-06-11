@@ -1,0 +1,43 @@
+.personajes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.personaje {
+    background-color: $color-secundario;
+    border-radius: 10px;
+    box-shadow: $sombra-normal;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: $sombra-hover;
+    }
+
+    img {
+        width: 150px;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+    }
+
+    h3 {
+        color: $color-acento;
+        margin-bottom: 0.5rem;
+    }
+}
+
+.menu section img,
+.universo img {
+    width: 50%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
