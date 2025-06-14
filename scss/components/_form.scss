@@ -1,3 +1,5 @@
+@use "sass:color";
+
 form {
     display: flex;
     flex-direction: column;
@@ -6,11 +8,21 @@ form {
     margin: 2rem auto;
     padding: 1.5rem;
     border-radius: 10px;
+    background-color: $color-secundario;
 
     input, textarea {
         padding: 10px;
-        border: none;
+        border: 1px solid #555; 
         border-radius: 5px;
+        background-color: #333; 
+        color: $color-texto;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease; 
+
+        &:focus {
+            outline: none; 
+            border-color: $color-acento; 
+            box-shadow: 0 0 8px rgba($color-acento, 0.6); 
+        }
     }
 
     button {
@@ -21,5 +33,10 @@ form {
         border: none;
         border-radius: 5px;
         cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease; 
+
+        &:active {
+            transform: translateY(0); 
+        }
     }
 }

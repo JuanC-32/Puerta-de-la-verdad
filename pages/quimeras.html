@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explora el universo de Fullmetal Alchemist Brotherhood: personajes, alquimia, homúnculos, militares, quimeras y mucho más en Puerta de la Verdad.">
+  <meta name="keywords" content="Fullmetal Alchemist, Puerta de la Verdad, Alquimia, Homúnculos, Anime, Edward Elric, Alphonse Elric, Roy Mustang, Quimeras, Amestris, Ishval">
+  <meta name="author" content="Juan Camilo Caicedo Vargas">
   <title>Puerta de la Verdad</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="icon" href="../img/icono.png" type="image/png">
 </head>
 <body>
@@ -84,45 +88,45 @@
 </nav>
 <!-- Sección de quimeras -->
 <main>
-    <section id="Quimeras">
+    <section data-aos="fade-in-up" id="Quimeras">
         <h2>🧬 Quimeras</h2>
         <div class="personajes-grid">
-            <div class="personaje">
+            <div class="personaje" data-aos="fade-in-up" data-aos-delay="100">
                 <img src="../img/heinkel.png" alt="Heinkel">
                 <h3>Heinkel</h3>
                 <p>Es un león quimera, antiguo soldado del ejército que fue convertido en híbrido. A pesar de su aspecto feroz, es honorable, inteligente y ayuda a los Elric en su lucha contra los homúnculos.</p>
             </div>
 
-            <div class="personaje">
+            <div class="personaje" data-aos="fade-in-up" data-aos-delay="200">
                 <img src="../img/martel.png" alt="Martel (Marta)">
                 <h3>Martel (Marta)</h3>
                 <p>Es una mujer-serpiente quimera que formaba parte del equipo de Greed. Leal y valiente, se esconde en el cuerpo de Alphonse durante un tiempo y se sacrifica intentando proteger a sus compañeros.</p>
             </div>
 
-            <div class="personaje">
+            <div class="personaje" data-aos="fade-in-up" data-aos-delay="300">
                 <img src="../img/zampano.png" alt="Zampano">
                 <h3>Zampano</h3>
                 <p>Un quimera con aspecto de jabalí. Inicialmente trabaja para los enemigos, pero luego se redime ayudando a los protagonistas. Tiene un carácter fuerte, pero muestra humanidad con el tiempo.</p>
             </div>
 
-            <div class="personaje">
+            <div class="personaje" data-aos="fade-in-up" data-aos-delay="400">
                 <img src="../img/dolcetto.png" alt="Dolcetto">
                 <h3>Dolcetto</h3>
                 <p>Otro quimera del grupo de Greed, con rasgos de perro. Es rápido, leal y protector con sus compañeros. Murió defendiendo su causa con honor.</p>
             </div>
-            <div class="personaje"> 
+            <div class="personaje" data-aos="fade-in-up" data-aos-delay="500"> 
                 <img src="../img/nina.png" alt="Nina Tucker">
                 <h3>Nina Tucker</h3>
                 <p>Una niña dulce e inocente, hija del alquimista Shou Tucker. Su trágica transformación en quimera es uno de los momentos más devastadores de la serie, simbolizando los límites éticos de la alquimia.</p>
             </div>
 
-            <div class="personaje">
+            <div class="personaje" data-aos="fade-in-up" data-aos-delay="600">
                 <img src="../img/roa.png" alt="Roa">
                 <h3>Roa</h3>
                 <p>Parte del grupo original de Greed. Es una quimera con fuerza descomunal y cuernos. Aunque parece rudo, es leal a sus compañeros y lucha por su libertad hasta el final.</p>
             </div>
 
-            <div class="personaje">
+            <div class="personaje" data-aos="fade-in-up" data-aos-delay="700">
                 <img src="../img/darius.png" alt="Darius">
                 <h3>Darius</h3>
                 <p>Es un híbrido simio-quimera. Pese a su aspecto intimidante, es astuto y con buen corazón. Apoya a Edward durante una etapa crítica, demostrando valentía y compañerismo.</p>
@@ -131,8 +135,15 @@
     </section>
 </main>
 <footer>
-  <p>&copy; 2025 Puerta de la Verdad | Hecho con <span style="color: red;">&hearts;</span> por fans, para fans</p>
+  <p>&copy; 2025 Puerta de la Verdad | Hecho con <span class="footer-heart" style="color: red;">&hearts;</span> por fans, para fans</p>
 </footer>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,
+        once: true,
+    });
+</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

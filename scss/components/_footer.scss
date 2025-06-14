@@ -5,4 +5,10 @@ footer {
     font-size: 0.9rem;
     color: #777;
     margin-top: 2rem;
+
+    .footer-heart {
+        display: inline-block; 
+        color: red;
+        animation: pulse 1.5s infinite;
+    }
 }
