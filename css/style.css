@@ -6,12 +6,12 @@ body {
   padding: 0;
 }
 
-header {
+.encabezado {
   text-align: center;
   padding: 2rem;
   background-color: #1a1a1a;
 }
-header h1 {
+.encabezado h1 {
   font-size: 3rem;
   color: #d7a22a;
   opacity: 0;
@@ -19,7 +19,7 @@ header h1 {
   animation: fadeInUp 1s ease-out forwards;
   animation-delay: 0.3s;
 }
-header p {
+.encabezado p {
   font-size: 1.2rem;
   color: #ccc;
   opacity: 0;
