@@ -4,29 +4,29 @@
 form {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem; // Más espacio entre elementos
+    gap: 1.2rem; 
     max-width: 600px;
     margin: 2rem auto;
-    padding: 2rem; // Más padding
+    padding: 2rem; 
     border-radius: v.$border-radius-base;
     background-color: v.$color-secundario;
-    box-shadow: v.$sombra-profunda; // Sombra más intensa para el formulario
+    box-shadow: v.$sombra-profunda; 
 
     label {
-        color: v.$color-acento; // Color de acento para las etiquetas
+        color: v.$color-acento; 
         font-weight: bold;
-        margin-bottom: 0.5rem; // Pequeño espacio debajo de la etiqueta
-        display: block; // Asegura que la etiqueta esté en su propia línea
+        margin-bottom: 0.5rem; 
+        display: block; 
     }
 
     input, textarea {
-        padding: 12px 15px; // Más padding para campos
-        border: 1px solid v.$color-claro; // Borde más claro
-        border-radius: v.$border-radius-base / 2; // Bordes más suaves
-        background-color: v.$color-oscuro; // Fondo más oscuro para los campos
+        padding: 12px 15px; 
+        border: 1px solid v.$color-claro; 
+        border-radius: v.$border-radius-base / 2; 
+        background-color: v.$color-oscuro; 
         color: v.$color-texto;
         transition: border-color v.$transition-speed v.$transition-ease, box-shadow v.$transition-speed v.$transition-ease;
-        width: 100%; // Ocupa todo el ancho disponible
+        width: 100%; 
 
         &:focus {
             outline: none;
@@ -36,7 +36,7 @@ form {
         }
 
         &::placeholder {
-            color: rgba(v.$color-texto, 0.6); // Placeholder más visible
+            color: rgba(v.$color-texto, 0.6);
         }
     }
 
@@ -48,13 +48,13 @@ form {
     button {
         background-color: v.$color-acento;
         color: v.$color-oscuro; // Texto negro sobre el botón
-        padding: 12px 25px; // Más padding para el botón
+        padding: 12px 25px; 
         font-weight: bold;
         border: none;
         border-radius: v.$border-radius-base;
         cursor: pointer;
         transition: background-color v.$transition-speed v.$transition-ease, transform 0.2s ease, box-shadow v.$transition-speed v.$transition-ease;
-        font-size: 1.1rem; // Tamaño de fuente del botón
+        font-size: 1.1rem; 
 
         &:hover {
             background-color: darken(v.$color-acento, 10%); // Oscurece el botón al pasar el ratón

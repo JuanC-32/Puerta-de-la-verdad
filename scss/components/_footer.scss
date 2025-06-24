@@ -1,22 +1,22 @@
 @use "../base/variables" as v;
 
 footer {
-    background-color: v.$color-oscuro; // Fondo más oscuro
+    background-color: v.$color-oscuro; 
     text-align: center;
-    padding: 1.5rem; // Más padding
-    font-size: 0.95rem; // Ligeramente más grande
-    color: v.$color-claro; // Texto en gris claro
-    margin-top: 3rem; // Más margen superior
+    padding: 1.5rem; 
+    font-size: 0.95rem; 
+    color: v.$color-claro; 
+    margin-top: 3rem; 
 
     .footer-heart {
         display: inline-block;
         color: red;
-        animation: pulse 1.5s infinite; // La animación ya está en _animaciones.scss
+        animation: pulse 1.5s infinite; 
         margin: 0 5px; // Espacio alrededor del corazón
     }
 
     p {
-        margin: 0; // Quitar margen por defecto del párrafo en el footer
-        color: v.$color-claro; // Asegurar color
+        margin: 0; 
+        color: v.$color-claro;
     }
 }

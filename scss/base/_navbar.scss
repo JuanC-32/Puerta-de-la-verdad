@@ -23,7 +23,7 @@
     .navbar-toggler {
         border-color: rgba(v.$color-acento, 0.5); // Borde más sutil
         .navbar-toggler-icon {
-            filter: none; // No necesitamos invertir los colores si el ícono ya es claro sobre oscuro
+            filter: none;
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28215, 162, 42, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); // Usar SVG codificado con el color de acento
         }
         &:focus {
@@ -35,7 +35,7 @@
         .nav-item {
             .nav-link {
                 color: v.$color-texto;
-                padding: 0.5rem 1rem; // Ajustar padding del enlace
+                padding: 0.5rem 1rem;
                 transition: color v.$transition-speed v.$transition-ease, background-color v.$transition-speed v.$transition-ease;
                 position: relative; // Para el efecto underline
 
@@ -73,7 +73,7 @@
         }
     }
 
-    // Estilos especÃ­ficos para los dropdown-toggle en el nivel principal
+    // Estilos especi­ficos para los dropdown-toggle en el nivel principal
     .nav-item.dropdown {
         .dropdown-toggle {
             &:hover,

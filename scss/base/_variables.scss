@@ -4,7 +4,7 @@ $color-acento: #d7a22a; // Amarillo dorado de la alquimia
 $color-secundario: #2a2a2a; // Gris oscuro para tarjetas/fondos
 $color-claro: #bebebe; // Un gris más claro para detalles
 $color-oscuro: #0d0d0d; // Un negro más intenso para fondos
-$color-error: #cc0000; // Para mensajes de error, si los hubiera
+$color-error: #cc0000; 
 
 $sombra-leve: 0 2px 5px rgba(0,0,0,0.2);
 $sombra-normal: 0 4px 10px rgba(0,0,0,0.4);
@@ -16,5 +16,5 @@ $transition-speed: 0.3s;
 $transition-ease: ease-in-out;
 
 // Tipografía
-$font-principal: 'Roboto', sans-serif; // Roboto es una buena opción de Google Fonts
-$font-secundaria: 'Open Sans', sans-serif; // Para párrafos, si se desea
+$font-principal: 'Roboto', sans-serif; 
+$font-secundaria: 'Open Sans', sans-serif;

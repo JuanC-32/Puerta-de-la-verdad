@@ -31,7 +31,7 @@
         width: 150px;
         height: 150px; // Hacer la imagen cuadrada para consistencia
         object-fit: cover; // Asegura que la imagen cubra el área sin distorsionarse
-        border-radius: 50%; // Circular para las fotos de perfil
+        border-radius: 50%;
         border: 3px solid v.$color-acento; // Borde de acento
         margin-bottom: 1rem;
         transition: transform v.$transition-speed v.$transition-ease, border-color v.$transition-speed v.$transition-ease;
@@ -101,7 +101,7 @@
 }
 
 
-// Estilos generales para las secciones de contenido (como las de 'universo.html' o 'index.html')
+// Estilos generales para las secciones de contenido
 .content-section {
     background-color: v.$color-secundario;
     padding: 2.5rem;
@@ -135,7 +135,7 @@
 
             // Icono personalizado para listas
             &::before {
-                content: '\2022'; // Unicode para un punto gordo o puedes usar un ícono de FMA
+                content: '\2022'; 
                 color: v.$color-acento;
                 position: absolute;
                 left: 0;
@@ -155,7 +155,7 @@
     img {
         max-width: 100%;
         height: auto;
-        display: block; // Centrar imagen si es única
+        display: block; // Centra imagen si es única
         margin: 1.5rem auto; // Margen superior/inferior y centrado
         border-radius: v.$border-radius-base;
         box-shadow: v.$sombra-normal;
