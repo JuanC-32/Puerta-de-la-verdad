@@ -1,65 +1,77 @@
+@use 'variables' as v;
+@use 'sass:color';
+
 .dropdown-submenu {
+    position: relative; // Asegurar posicionamiento relativo para el submenú
+
     & > .dropdown-menu {
         display: none;
         position: absolute;
         left: 100%;
         top: 0;
-        margin-top: -1px;
-        background-color: $color-fondo; 
-        border: 1px solid $color-secundario; 
-        border-radius: .25rem; 
-        box-shadow: $sombra-normal; 
+        margin-top: -1px; // Ajuste fino
+        background-color: v.$color-secundario; // Fondo de submenú
+        border: 1px solid v.$color-claro; // Borde más visible
+        border-radius: v.$border-radius-base;
+        box-shadow: v.$sombra-normal;
+        min-width: 200px; // Ancho mínimo para legibilidad
+        z-index: 1000; // Asegurar que esté por encima de otros elementos
     }
 
     &:hover > .dropdown-menu {
-        display: block;
+        display: block; // Muestra el submenú al pasar el ratón
     }
 }
 
 .dropdown-menu {
+    padding: 0.5rem 0; // Padding interno
+
     & > li.dropdown-submenu:hover > .dropdown-toggle {
-        background-color: $color-acento;
-        color: $color-texto;
+        background-color: v.$color-acento;
+        color: v.$color-fondo; // Texto oscuro sobre acento
     }
 
-.dropdown-item {
-    color: $color-texto; 
+    .dropdown-item {
+        color: v.$color-texto;
+        padding: 0.75rem 1.5rem; // Padding más generoso
+        transition: background-color v.$transition-speed v.$transition-ease, color v.$transition-speed v.$transition-ease;
 
-    &:hover,
-    &:focus {
-        background-color: $color-acento; 
-        color: $color-fondo; 
+        &:hover,
+        &:focus {
+            background-color: v.$color-acento;
+            color: v.$color-oscuro; // Texto negro sobre fondo acento
         }
     }
 }
 
-
 @media (max-width: 991.98px) {
-.dropdown-submenu {
-    & > .dropdown-menu {
-        position: static;
-        left: auto;
-        top: auto;
-        margin-top: 0;
-        box-shadow: none;
-    }
+    .dropdown-submenu {
+        & > .dropdown-menu {
+            position: static; // Vuelve a ser estático en móviles
+            left: auto;
+            top: auto;
+            margin-top: 0;
+            box-shadow: none;
+            background-color: darken(v.$color-secundario, 5%); // Fondo más oscuro para submenú en móvil
+            border: none;
+            border-radius: 0;
+            width: 100%; // Ocupa todo el ancho en móvil
+        }
 
-    &:hover > .dropdown-menu {
-        display: none; 
-    }
+        // Es importante deshabilitar el hover en móviles si se usa un toggle con JS
+        &:hover > .dropdown-menu {
+            display: none; // Solo se muestra si hay un JS para toggle
+        }
 
-    .dropdown-toggle[data-bs-toggle="dropdown"] {
-        &::after {
-            display: inline-block;
-            margin-left: 0.255em;
-            vertical-align: 0.255em;
-            content: "";
-            border-top: 0.3em solid;
-            border-right: 0.3em solid transparent;
-            border-bottom: 0;
-            border-left: 0.3em solid transparent;
-            color: $color-texto;
-            }
+        // Estilos para el toggle de submenú en móviles (si usas JS para expandir)
+        & > .dropdown-toggle::after {
+            float: right; // Flecha a la derecha
+            transform: rotate(-90deg);
+            transition: transform v.$transition-speed v.$transition-ease;
+        }
+
+        &.show > .dropdown-toggle::after {
+            transform: rotate(0deg); // Gira la flecha cuando está abierto
         }
     }
 }

@@ -1,7 +1,53 @@
+@use "./variables" as v;
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: $color-fondo;
-    color: $color-texto;
+    font-family: v.$font-principal; // Usamos la variable de fuente
+    background-color: v.$color-fondo;
+    color: v.$color-texto;
     margin: 0;
     padding: 0;
+    line-height: 1.6; // Mejora la legibilidad de los párrafos
+    display: flex; // Para el sticky footer
+    flex-direction: column; // Para el sticky footer
+    min-height: 100vh; // Para el sticky footer
+}
+
+main {
+    flex: 1; // Para el sticky footer
+    padding: 2rem 0; // Añade un padding general para el contenido principal
+    max-width: 1200px; // Limita el ancho del contenido principal
+    margin: 0 auto; // Centra el contenido principal
+    width: 90%; // Ocupa un 90% del ancho disponible
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: v.$color-acento; // Color de acento para los títulos
+    margin-bottom: 1rem;
+    text-align: center; // Centrar todos los títulos por defecto
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); // Sombra sutil para títulos
+}
+
+p {
+    margin-bottom: 1rem;
+    color: v.$color-claro; // Texto de párrafo con un gris más claro
+    font-family: v.$font-secundaria; // Fuente secundaria para párrafos
+}
+
+a {
+    color: v.$color-acento;
+    text-decoration: none;
+    transition: color v.$transition-speed v.$transition-ease;
+
+    &:hover {
+        color: lighten(v.$color-acento, 10%); // Aclara el color al pasar el ratón
+        text-decoration: underline;
+    }
+}
+
+section {
+    background-color: v.$color-secundario;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: v.$border-radius-base;
+    box-shadow: v.$sombra-normal;
 }

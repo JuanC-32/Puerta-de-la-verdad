@@ -1,6 +1,20 @@
 $color-fondo: #1a1a1a;
 $color-texto: #f0f0f0;
-$color-acento: #d7a22a;
-$color-secundario: #2a2a2a;
-$sombra-normal: 0 4px 10px rgba(0,0,0,0.3);
+$color-acento: #d7a22a; // Amarillo dorado de la alquimia
+$color-secundario: #2a2a2a; // Gris oscuro para tarjetas/fondos
+$color-claro: #bebebe; // Un gris más claro para detalles
+$color-oscuro: #0d0d0d; // Un negro más intenso para fondos
+$color-error: #cc0000; // Para mensajes de error, si los hubiera
+
+$sombra-leve: 0 2px 5px rgba(0,0,0,0.2);
+$sombra-normal: 0 4px 10px rgba(0,0,0,0.4);
+$sombra-profunda: 0 8px 20px rgba(0,0,0,0.6);
 $sombra-hover: 0 6px 15px rgba(0,0,0,0.5);
+
+$border-radius-base: 8px;
+$transition-speed: 0.3s;
+$transition-ease: ease-in-out;
+
+// Tipografía
+$font-principal: 'Roboto', sans-serif; // Roboto es una buena opción de Google Fonts
+$font-secundaria: 'Open Sans', sans-serif; // Para párrafos, si se desea

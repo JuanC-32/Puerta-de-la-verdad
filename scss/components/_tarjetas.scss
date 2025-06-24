@@ -1,3 +1,6 @@
+@use "../base/variables" as v;
+@use "sass:color";
+
 .personajes-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -6,42 +9,155 @@
 }
 
 .personaje {
-    background-color: $color-secundario;
-    border-radius: 10px;
-    box-shadow: $sombra-normal;
-    padding: 1rem;
+    background-color: v.$color-secundario;
+    border-radius: v.$border-radius-base;
+    box-shadow: v.$sombra-normal;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    transition: transform v.$transition-speed v.$transition-ease, box-shadow v.$transition-speed v.$transition-ease;
 
-    opacity: 0; 
-    transform: translateY(20px); 
-    animation: fadeInUp 0.8s ease-out forwards;
-}
+    opacity: 0;
+    transform: translateY(20px);
+
+    &:hover {
+        transform: translateY(-5px); // Ligera elevación al pasar el ratón
+        box-shadow: v.$sombra-hover; // Sombra más intensa al pasar el ratón
+    }
 
     img {
         width: 150px;
-        height: auto;
-        border-radius: 8px;
+        height: 150px; // Hacer la imagen cuadrada para consistencia
+        object-fit: cover; // Asegura que la imagen cubra el área sin distorsionarse
+        border-radius: 50%; // Circular para las fotos de perfil
+        border: 3px solid v.$color-acento; // Borde de acento
         margin-bottom: 1rem;
-        transition: transform 0.3s ease;
+        transition: transform v.$transition-speed v.$transition-ease, border-color v.$transition-speed v.$transition-ease;
 
         &:hover {
-            transform: scale(1.05);
+            transform: scale(1.08) rotate(3deg); // Pequeña rotación y escala al pasar el ratón
+            border-color: lighten(v.$color-acento, 10%);
+        }
     }
 
     h3 {
-        color: $color-acento;
+        color: v.$color-acento;
         margin-bottom: 0.5rem;
+        font-size: 1.5rem; // Tamaño de título para personaje
+    }
+
+    p {
+        font-size: 0.95rem;
+        color: v.$color-claro;
     }
 }
 
-.menu section img,
-.universo img {
-    width: 50%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+// Estilos para la sección de universo
+.universo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+
+    .universo-item {
+        background-color: v.$color-secundario;
+        border-radius: v.$border-radius-base;
+        box-shadow: v.$sombra-normal;
+        padding: 1.5rem;
+        text-align: center;
+        transition: transform v.$transition-speed v.$transition-ease, box-shadow v.$transition-speed v.$transition-ease;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: v.$sombra-hover;
+        }
+
+        h3 {
+            color: v.$color-acento;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        p {
+            color: v.$color-claro;
+            font-size: 1rem;
+        }
+
+        img {
+            max-width: 100%; // Asegura que las imágenes dentro de las tarjetas no se desborden
+            height: auto;
+            border-radius: v.$border-radius-base;
+            margin-bottom: 1rem;
+            box-shadow: v.$sombra-leve;
+            transition: transform v.$transition-speed v.$transition-ease;
+
+            &:hover {
+                transform: scale(1.02);
+            }
+        }
+    }
+}
+
+
+// Estilos generales para las secciones de contenido (como las de 'universo.html' o 'index.html')
+.content-section {
+    background-color: v.$color-secundario;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    border-radius: v.$border-radius-base;
+    box-shadow: v.$sombra-normal;
+
+    h2 {
+        color: v.$color-acento;
+        margin-bottom: 1.5rem;
+        font-size: 2.2rem;
+    }
+
+    p {
+        color: v.$color-claro;
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+
+    ul {
+        list-style: none; // Quitar viñetas por defecto
+        padding: 0;
+        margin-left: 1.5rem; // Indentación
+
+        li {
+            position: relative;
+            margin-bottom: 0.7rem;
+            padding-left: 1.5rem; // Espacio para el ícono
+            color: v.$color-claro;
+            font-size: 1.05rem;
+
+            // Icono personalizado para listas
+            &::before {
+                content: '\2022'; // Unicode para un punto gordo o puedes usar un ícono de FMA
+                color: v.$color-acento;
+                position: absolute;
+                left: 0;
+                top: 0;
+                font-weight: bold;
+                font-size: 1.2em;
+            }
+        }
+    }
+
+    strong {
+        color: v.$color-acento;
+        font-weight: bold;
+    }
+
+    // Estilo para imágenes dentro de secciones de contenido
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block; // Centrar imagen si es única
+        margin: 1.5rem auto; // Margen superior/inferior y centrado
+        border-radius: v.$border-radius-base;
+        box-shadow: v.$sombra-normal;
+    }
 }

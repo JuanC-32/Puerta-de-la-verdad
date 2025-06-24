@@ -1,0 +1,86 @@
+@use 'variables' as v;
+@use 'sass:color';
+
+.navbar {
+    background-color: v.$color-oscuro !important; // Un color más oscuro para el navbar
+    box-shadow: v.$sombra-profunda; // Sombra más pronunciada para el navbar
+    padding: 0.8rem 0; // Ajustar padding
+    transition: background-color v.$transition-speed v.$transition-ease;
+
+    .navbar-brand {
+        color: v.$color-acento; // Color de acento para el logo
+        font-weight: bold;
+        font-size: 1.8rem; // Tamaño de fuente más grande
+        transition: color v.$transition-speed v.$transition-ease;
+
+        &:hover,
+        &:focus {
+            color: lighten(v.$color-acento, 15%); // Aclara el color al pasar el ratón
+            transform: scale(1.02); // Pequeño efecto de escala
+        }
+    }
+
+    .navbar-toggler {
+        border-color: rgba(v.$color-acento, 0.5); // Borde más sutil
+        .navbar-toggler-icon {
+            filter: none; // No necesitamos invertir los colores si el ícono ya es claro sobre oscuro
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28215, 162, 42, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); // Usar SVG codificado con el color de acento
+        }
+        &:focus {
+            box-shadow: 0 0 0 0.25rem rgba(v.$color-acento, 0.5);
+        }
+    }
+
+    .navbar-nav {
+        .nav-item {
+            .nav-link {
+                color: v.$color-texto;
+                padding: 0.5rem 1rem; // Ajustar padding del enlace
+                transition: color v.$transition-speed v.$transition-ease, background-color v.$transition-speed v.$transition-ease;
+                position: relative; // Para el efecto underline
+
+                &:hover,
+                &:focus {
+                    color: v.$color-acento; // El color de acento al pasar el ratón
+                    background-color: rgba(v.$color-acento, 0.1); // Fondo sutil
+                }
+
+                &.active {
+                    color: v.$color-acento;
+                    font-weight: bold;
+                    background-color: rgba(v.$color-acento, 0.2); // Fondo más visible para activo
+                    border-radius: 5px; // Bordes redondeados
+                }
+
+                // Efecto de subrayado que se expande
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    width: 0;
+                    height: 2px;
+                    background-color: v.$color-acento;
+                    transition: width v.$transition-speed v.$transition-ease, left v.$transition-speed v.$transition-ease;
+                }
+
+                &:hover::after,
+                &.active::after {
+                    width: 100%;
+                    left: 0;
+                }
+            }
+        }
+    }
+
+    // Estilos especÃ­ficos para los dropdown-toggle en el nivel principal
+    .nav-item.dropdown {
+        .dropdown-toggle {
+            &:hover,
+            &:focus,
+            &.show {
+                color: v.$color-acento; // Color de acento para dropdown activo
+            }
+        }
+    }
+}

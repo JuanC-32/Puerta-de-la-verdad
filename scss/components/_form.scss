@@ -1,42 +1,70 @@
+@use "../base/variables" as v;
 @use "sass:color";
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.2rem; // Más espacio entre elementos
     max-width: 600px;
     margin: 2rem auto;
-    padding: 1.5rem;
-    border-radius: 10px;
-    background-color: $color-secundario;
+    padding: 2rem; // Más padding
+    border-radius: v.$border-radius-base;
+    background-color: v.$color-secundario;
+    box-shadow: v.$sombra-profunda; // Sombra más intensa para el formulario
+
+    label {
+        color: v.$color-acento; // Color de acento para las etiquetas
+        font-weight: bold;
+        margin-bottom: 0.5rem; // Pequeño espacio debajo de la etiqueta
+        display: block; // Asegura que la etiqueta esté en su propia línea
+    }
 
     input, textarea {
-        padding: 10px;
-        border: 1px solid #555; 
-        border-radius: 5px;
-        background-color: #333; 
-        color: $color-texto;
-        transition: border-color 0.3s ease, box-shadow 0.3s ease; 
+        padding: 12px 15px; // Más padding para campos
+        border: 1px solid v.$color-claro; // Borde más claro
+        border-radius: v.$border-radius-base / 2; // Bordes más suaves
+        background-color: v.$color-oscuro; // Fondo más oscuro para los campos
+        color: v.$color-texto;
+        transition: border-color v.$transition-speed v.$transition-ease, box-shadow v.$transition-speed v.$transition-ease;
+        width: 100%; // Ocupa todo el ancho disponible
 
         &:focus {
-            outline: none; 
-            border-color: $color-acento; 
-            box-shadow: 0 0 8px rgba($color-acento, 0.6); 
+            outline: none;
+            border-color: v.$color-acento;
+            box-shadow: 0 0 12px rgba(v.$color-acento, 0.7); // Sombra más pronunciada al enfocar
+            background-color: lighten(v.$color-oscuro, 5%); // Ligeramente más claro al enfocar
+        }
+
+        &::placeholder {
+            color: rgba(v.$color-texto, 0.6); // Placeholder más visible
         }
     }
 
+    textarea {
+        resize: vertical; // Permite redimensionar verticalmente
+        min-height: 120px; // Altura mínima para el área de texto
+    }
+
     button {
-        background-color: $color-acento;
-        color: black;
-        padding: 10px;
+        background-color: v.$color-acento;
+        color: v.$color-oscuro; // Texto negro sobre el botón
+        padding: 12px 25px; // Más padding para el botón
         font-weight: bold;
         border: none;
-        border-radius: 5px;
+        border-radius: v.$border-radius-base;
         cursor: pointer;
-        transition: background-color 0.3s ease, transform 0.2s ease; 
+        transition: background-color v.$transition-speed v.$transition-ease, transform 0.2s ease, box-shadow v.$transition-speed v.$transition-ease;
+        font-size: 1.1rem; // Tamaño de fuente del botón
+
+        &:hover {
+            background-color: darken(v.$color-acento, 10%); // Oscurece el botón al pasar el ratón
+            transform: translateY(-2px); // Pequeña elevación
+            box-shadow: v.$sombra-hover;
+        }
 
         &:active {
-            transform: translateY(0); 
+            transform: translateY(0); // Vuelve a la posición original al hacer clic
+            box-shadow: v.$sombra-normal;
         }
     }
 }

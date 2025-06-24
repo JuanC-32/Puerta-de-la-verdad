@@ -1,23 +1,37 @@
+@use "../base/variables" as v;
+@use "sass:color";
+
 .encabezado {
     text-align: center;
-    padding: 2rem;
-    background-color: $color-fondo;
+    padding: 3rem 2rem; // Más padding para espacio
+    background-color: v.$color-secundario; // Fondo para el encabezado
+    border-bottom: 3px solid v.$color-acento; // Una línea de acento
+    box-shadow: v.$sombra-normal; // Sombra sutil
+    margin-bottom: 2rem; // Espacio debajo del encabezado
 
     h1 {
-        font-size: 3rem;
-        color: $color-acento;
-        opacity: 0; 
-        transform: translateY(20px); 
-        animation: fadeInUp 1s ease-out forwards; 
-        animation-delay: 0.3s; 
+        font-size: clamp(2.5rem, 6vw, 4.5rem); // Tamaño responsivo para el título
+        color: v.$color-acento;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s ease-out forwards;
+        animation-delay: 0.3s;
+        position: relative; // Para el efecto metálico
+        display: inline-block; // Necesario para brillo
+        background: linear-gradient(90deg, v.$color-claro 0%, v.$color-acento 50%, v.$color-claro 100%);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: metallicShimmer 3s infinite linear, fadeInUp 1s ease-out forwards;
+        animation-delay: 0.3s; // Para AOS
     }
 
     p {
-        font-size: 1.2rem;
-        color: #ccc;
-        opacity: 0; 
-        transform: translateY(20px); 
-        animation: fadeInUp 1s ease-out forwards; 
+        font-size: clamp(1rem, 2.5vw, 1.3rem); // Tamaño responsivo para el párrafo
+        color: v.$color-claro;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s ease-out forwards;
         animation-delay: 0.6s;
     }
 }

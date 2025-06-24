@@ -1,34 +1,121 @@
-@media (max-width: 768px) {
+@use "./variables" as v;
+
+// Mobile styles (up to 767px)
+@media (max-width: 767px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.5rem !important; // Ajuste para el tamaño del logo en móviles
+    }
+
+    .navbar-nav {
+        text-align: center; // Centrar los elementos del menú desplegado
+        .nav-item .nav-link {
+            padding: 0.8rem 1rem; // Más padding para facilitar el toque
+        }
+    }
+
     .personajes-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    padding: 1rem;
+        grid-template-columns: 1fr; // Una columna en móviles
+        gap: 1rem;
+        padding: 1rem;
     }
 
-    .personaje img {
-    max-width: 120px;
+    .personaje {
+        padding: 1rem;
+        img {
+            width: 100px; // Imágenes más pequeñas en móviles
+            height: 100px;
+        }
+        h3 {
+            font-size: 1.3rem;
+        }
+        p {
+            font-size: 0.85rem;
+        }
     }
 
-    .universo {
-    padding: 1rem;
-    font-size: 0.95rem;
+    .universo-grid {
+        grid-template-columns: 1fr; // Una columna en móviles
+        gap: 1.5rem;
+        padding: 1rem;
     }
 
-    .universo img {
-    max-width: 180px;
-    margin-bottom: 1rem;
+    .universo-item {
+        padding: 1rem;
+        h3 {
+            font-size: 1.5rem;
+        }
+        p {
+            font-size: 0.9rem;
+        }
+    }
+
+    .content-section {
+        padding: 1.5rem;
+        h2 {
+            font-size: 1.8rem;
+        }
+        p, ul li {
+            font-size: 0.95rem;
+        }
+    }
+
+    form {
+        padding: 1.5rem;
+        button {
+            font-size: 1rem;
+            padding: 10px 20px;
+        }
+    }
+
+    footer {
+        font-size: 0.8rem;
+        padding: 1rem;
     }
 }
 
-@media (min-width: 1200px) {
+// Tablet styles (768px to 1199px)
+@media (min-width: 768px) and (max-width: 1199px) {
     .personajes-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+        grid-template-columns: repeat(2, 1fr); // Dos columnas en tablets
+        gap: 1.5rem;
+        padding: 1.5rem;
     }
 
-    .universo {
-    padding: 3rem;
-    font-size: 1.05rem;
-    max-width: 1100px;
+    .universo-grid {
+        grid-template-columns: repeat(2, 1fr); // Dos columnas en tablets
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    main {
+        width: 95%; // Ocupa más ancho en tablets
+    }
+}
+
+// Desktop styles (1200px and up)
+@media (min-width: 1200px) {
+    .personajes-grid {
+        grid-template-columns: repeat(3, 1fr); // Tres columnas en desktop
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    .universo-grid {
+        grid-template-columns: repeat(3, 1fr); // Tres columnas en desktop
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    main {
+        max-width: 1400px; // Mayor ancho en pantallas grandes
+        width: 85%;
     }
 }

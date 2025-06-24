@@ -1,3 +1,4 @@
+@use "../base/variables" as v;
 @use "sass:color";
 
 @keyframes fadeIn {
@@ -66,63 +67,34 @@
     }
 }
 
-#loading-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: $color-fondo;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    opacity: 1;
-    transition: opacity 0.5s ease-out; 
-
-    &.hidden {
-        opacity: 0;
-        pointer-events: none;
-    }
-
-    
-    .loading-circle {
-        width: 100px;
-        height: 100px;
-        animation: rotate 1.5s linear infinite;
-    }
-    .loading-text {
-        color: $color-acento;
-        font-size: 1.5rem;
-        margin-left: 15px;
-        animation: pulse 1.5s infinite;
-    }
+// Animaciones para Animate On Scroll (AOS) - Asegúrate de que las clases coincidan
+[data-aos="fade-down"] {
+    animation: fadeInDown 0.8s ease-out forwards;
+}
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-// Animaciones para Animate On Scroll (AOS)
-[data-aos="fade-in"] {
-    animation: fadeIn 0.8s ease-out forwards;
-}
-
-[data-aos="fade-in-up"] {
+[data-aos="fade-up"] {
     animation: fadeInUp 0.8s ease-out forwards;
 }
 
-[data-aos="fade-in-left"] {
+[data-aos="fade-left"] {
     animation: fadeInLeft 0.8s ease-out forwards;
 }
 
-[data-aos="fade-in-right"] {
+[data-aos="fade-right"] {
     animation: fadeInRight 0.8s ease-out forwards;
+}
+
+// Añadimos estas si AOS las usa
+[data-aos="zoom-in"] {
+    animation: zoomIn 0.8s ease-out forwards;
+}
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
 }
 
 
@@ -138,34 +110,3 @@
     animation: pulse 1.5s infinite;
 }
 
-// Hover para enlaces de navegación
-.navbar-nav .nav-link {
-    transition: color 0.3s ease, transform 0.3s ease;
-    position: relative; 
-    overflow: hidden; 
-
-    &::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background-color: $color-acento;
-        transform: translateX(-100%); 
-        transition: transform 0.3s ease-out;
-    }
-
-    &:hover::after {
-        transform: translateX(0%);
-    }
-
-    
-    &.active {
-        color: $color-acento;
-        font-weight: bold;
-        
-        border-bottom: 2px solid $color-acento;
-        padding-bottom: 2px;
-    }
-}
