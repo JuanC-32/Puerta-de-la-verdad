@@ -69,7 +69,6 @@ section {
   display: inline-block;
   background: linear-gradient(90deg, #bebebe 0%, #d7a22a 50%, #bebebe 100%);
   background-size: 200% auto;
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: metallicShimmer 3s infinite linear, fadeInUp 1s ease-out forwards;
   animation-delay: 0.3s;
