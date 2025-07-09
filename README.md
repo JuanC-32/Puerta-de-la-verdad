@@ -68,7 +68,7 @@ Este es un proyecto hecho con amor por fans. Si deseas mejorar el código, agreg
 
 ## 🌐 Demo
 
-> Pronto: desplegado en GitHub Pages o Netlify 🚀
+https://puerta-de-la-verdad.netlify.app/ 🚀
 
 ---
 
