@@ -20,7 +20,6 @@
         display: inline-block; 
         background: linear-gradient(90deg, v.$color-claro 0%, v.$color-acento 50%, v.$color-claro 100%);
         background-size: 200% auto;
-        -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         animation: metallicShimmer 3s infinite linear, fadeInUp 1s ease-out forwards;
         animation-delay: 0.3s; 
